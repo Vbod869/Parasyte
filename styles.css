@@ -1,237 +1,175 @@
 *,
 ::after,
 ::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .banner {
-  background: #120e0f url(images/bg.jpg);
-  background-size: cover;
-  min-height: 100vh;
-  overflow: hidden;
+    background: #120e0f url(images/bg.jpg) no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 90%;
-  margin: auto;
-  padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem 0;
 }
 
 nav a img {
-  width: 350px;
+    width: 100%;
+    max-width: 350px;
 }
 
 .hamburger {
-  height: 50px;
-  width: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  cursor: pointer;
-  position: relative;
-  z-index: 10;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 10;
 }
 
 .line {
-  height: 0.2rem;
-  width: 80%;
-  background: white;
-  transition: all 0.3s ease;
-}
-
-.line-one {
-  transform: translateY(-10px);
-}
-
-.line-three {
-  transform: translateY(10px);
-}
-
-.active .line-one {
-  position: absolute;
-  top: 50%;
-  transform: rotate(45deg);
-}
-.active .line-two {
-  transform: translateX(20%);
-  opacity: 0;
-}
-.active .line-three {
-  position: absolute;
-  top: 50%;
-  transform: rotate(-45deg);
+    height: 0.2rem;
+    width: 80%;
+    background: white;
+    transition: all 0.3s ease;
+    margin: 3px 0;
 }
 
 .navigation {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100vw;
-  height: 100vh;
-
-  background-image: url(./images/menuBg.jpg);
-  background-size: cover;
-  background-position: center;
-
-  z-index: 9;
-  user-select: none;
-  clip-path: circle(50% at 110% -90%);
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding-right: 10rem;
-  text-align: center;
-
-  transition: clip-path 0.8s ease-in-out;
-}
-
-.navigation ul {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  list-style: none;
-}
-
-.navigation a {
-  text-decoration: none;
-  color: white;
-  font-size: 3em;
-  transition: all 0.4s ease;
-}
-
-.navigation a:hover {
-  color: rgb(215, 65, 65);
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/menuBg.jpg);
+    background-size: cover;
+    background-position: center;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: circle(0% at 100% 0);
+    transition: clip-path 0.8s ease-in-out;
 }
 
 .navigation.active {
-  opacity: 1;
-  clip-path: circle(100%);
+    clip-path: circle(150% at 100% 0);
+}
+
+.navigation ul {
+    list-style: none;
+    text-align: center;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: white;
+    font-size: 2em;
+    display: block;
+    margin: 1rem 0;
+    transition: all 0.4s ease;
+}
+
+.navigation a:hover {
+    color: rgb(215, 65, 65);
 }
 
 .content {
-  width: 100%;
-  padding: 2rem 5rem;
-  position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.content p {
-  color: white;
-  width: 50%;
-  font-size: 1.5em;
-  margin-top: 2em;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.9);
-}
-
-.images {
-  position: absolute;
-  bottom: -70px;
-  right: 5%;
-}
-
-.container {
-  display: flex;
-}
-
-#title {
-  width: 700px;
+.content-text {
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.9);
 }
 
 #title img {
-  max-width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.content p {
+    font-size: 1.2em;
+    margin-top: 1em;
+    max-width: 600px;
+}
+
+.images {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
 .img-card img {
-  width: 250px;
-  height: 150px;
-  border: 4px solid white;
-  padding: 0;
-  margin-left: 1rem;
-  position: relative;
-  cursor: pointer;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border: 4px solid white;
 }
 
-@media (max-width: 1100px) {
-  .content {
-    padding: 1rem;
-    text-align: center;
-    margin-top: 2rem;
-  }
-  .content div:nth-child(1) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  #title {
-    width: 500px;
+@media (max-width: 768px) {
+    nav {
+        padding: 1rem 5%;
+    }
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    nav a img {
+        max-width: 200px;
+    }
 
-  .content p {
-    width: 90%;
-  }
-  .images {
-    position: relative;
-  }
-  .images .container{
-    display: flex !important;
-    flex-direction: row !important;
-}
-  .images img {
-    width: 250px;
-    height: 150px;
-    margin-bottom: 1rem;
-  }
+    .content {
+        padding: 1rem 5%;
+    }
+
+    #title img {
+        max-width: 80%;
+    }
+
+    .content p {
+        font-size: 1em;
+    }
+
+    .images {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 }
 
-@media (max-width: 800px) {
-  header a img {
-    width: 200px;
-  }
-  .navigation {
-    justify-content: center;
-    padding: 0;
-  }
-  .container {
-    flex-direction: column;
-  }
+@media (max-width: 480px) {
+    .navigation a {
+        font-size: 1.5em;
+    }
 
-  .images {
-    display: flex;
-    justify-content: center;
-  }
-  .images img {
-    width: 350px;
-    height: 200px;
-    margin-bottom: 2rem;
-  }
+    .content p {
+        font-size: 0.9em;
+    }
 
-  .images .container{
-    flex-direction: column !important;
-  }
-
-  #title {
-    width: 80%;
-  }
+    .img-card img {
+        max-width: 200px;
+    }
 }
-
-@media (max-width: 550px) {
-  .content p {
-    font-size: 1.3em;
-  }
-  .images img {
-    width: 250px;
-    height: 150px;
-  }
-}
-
